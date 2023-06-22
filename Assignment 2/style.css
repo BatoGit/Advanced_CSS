@@ -1,0 +1,68 @@
+body {
+    background: #050210;
+    min-height: 70vh;
+    display: grid;
+    place-content: center;
+}
+
+
+.circle {
+    height: 350px;
+    width: 350px;
+    background-color: #050210;
+    border-radius: 50%;
+
+    position: relative;
+}
+
+.circle::before,
+.circle::after {
+    content: "";
+    position: absolute;
+    inset: -2rem;
+    z-index: -2;
+    background: linear-gradient(0deg, 
+    #fb5dad,
+    #55fb9f,
+    #b97aff
+    );
+    border-radius: inherit;
+    animation: anim 2s linear infinite;
+}
+
+
+.circle::after {
+    filter: blur(3.5rem);
+}
+
+.pulse {
+    height: 180px;
+    width: 180px;
+    background-color: rgb(29, 22, 64);
+    border-radius: 50%;
+    top: 145%;
+    left: 25%;
+    z-index: 1;
+    opacity: 50%;
+
+    position: relative;
+    animation: pulseAnimate 1.3s ease-out infinite;
+}
+
+@keyframes anim 
+{
+    100%
+    {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes pulseAnimate
+
+{
+    100%
+    {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
